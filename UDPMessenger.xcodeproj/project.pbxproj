@@ -1,0 +1,293 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		502B15A714AF070500F73D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15A614AF070500F73D7D /* UIKit.framework */; };
+		502B15A914AF070500F73D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15A814AF070500F73D7D /* Foundation.framework */; };
+		502B15AB14AF070500F73D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15AA14AF070500F73D7D /* CoreGraphics.framework */; };
+		502B15B114AF070500F73D7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 502B15AF14AF070500F73D7D /* InfoPlist.strings */; };
+		502B15B314AF070500F73D7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15B214AF070500F73D7D /* main.m */; };
+		502B15B714AF070500F73D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15B614AF070500F73D7D /* AppDelegate.m */; };
+		502B15BA14AF070500F73D7D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */; };
+		502B15BD14AF070500F73D7D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B15BB14AF070500F73D7D /* MainStoryboard_iPad.storyboard */; };
+		502B15C014AF070500F73D7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15BF14AF070500F73D7D /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		502B15A214AF070500F73D7D /* UDPMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDPMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		502B15A614AF070500F73D7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		502B15A814AF070500F73D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		502B15AA14AF070500F73D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		502B15AE14AF070500F73D7D /* UDPMessenger-Info.plist */ = {isa = PBXFileReference; path = "UDPMessenger-Info.plist"; sourceTree = "<group>"; };
+		502B15B014AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		502B15B214AF070500F73D7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		502B15B414AF070500F73D7D /* UDPMessenger-Prefix.pch */ = {isa = PBXFileReference; path = "UDPMessenger-Prefix.pch"; sourceTree = "<group>"; };
+		502B15B514AF070500F73D7D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		502B15B614AF070500F73D7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		502B15B914AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		502B15BC14AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		502B15BE14AF070500F73D7D /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		502B15BF14AF070500F73D7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		502B159F14AF070500F73D7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B15A714AF070500F73D7D /* UIKit.framework in Frameworks */,
+				502B15A914AF070500F73D7D /* Foundation.framework in Frameworks */,
+				502B15AB14AF070500F73D7D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		502B159714AF070500F73D7D = {
+			isa = PBXGroup;
+			children = (
+				502B15AC14AF070500F73D7D /* UDPMessenger */,
+				502B15A514AF070500F73D7D /* Frameworks */,
+				502B15A314AF070500F73D7D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		502B15A314AF070500F73D7D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				502B15A214AF070500F73D7D /* UDPMessenger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		502B15A514AF070500F73D7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				502B15A614AF070500F73D7D /* UIKit.framework */,
+				502B15A814AF070500F73D7D /* Foundation.framework */,
+				502B15AA14AF070500F73D7D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		502B15AC14AF070500F73D7D /* UDPMessenger */ = {
+			isa = PBXGroup;
+			children = (
+				502B15B514AF070500F73D7D /* AppDelegate.h */,
+				502B15B614AF070500F73D7D /* AppDelegate.m */,
+				502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */,
+				502B15BB14AF070500F73D7D /* MainStoryboard_iPad.storyboard */,
+				502B15BE14AF070500F73D7D /* ViewController.h */,
+				502B15BF14AF070500F73D7D /* ViewController.m */,
+				502B15AD14AF070500F73D7D /* Supporting Files */,
+			);
+			path = UDPMessenger;
+			sourceTree = "<group>";
+		};
+		502B15AD14AF070500F73D7D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				502B15AE14AF070500F73D7D /* UDPMessenger-Info.plist */,
+				502B15AF14AF070500F73D7D /* InfoPlist.strings */,
+				502B15B214AF070500F73D7D /* main.m */,
+				502B15B414AF070500F73D7D /* UDPMessenger-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		502B15A114AF070500F73D7D /* UDPMessenger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 502B15C314AF070500F73D7D /* Build configuration list for PBXNativeTarget "UDPMessenger" */;
+			buildPhases = (
+				502B159E14AF070500F73D7D /* Sources */,
+				502B159F14AF070500F73D7D /* Frameworks */,
+				502B15A014AF070500F73D7D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UDPMessenger;
+			productName = UDPMessenger;
+			productReference = 502B15A214AF070500F73D7D /* UDPMessenger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		502B159914AF070500F73D7D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 502B159C14AF070500F73D7D /* Build configuration list for PBXProject "UDPMessenger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 502B159714AF070500F73D7D;
+			productRefGroup = 502B15A314AF070500F73D7D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				502B15A114AF070500F73D7D /* UDPMessenger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		502B15A014AF070500F73D7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B15B114AF070500F73D7D /* InfoPlist.strings in Resources */,
+				502B15BA14AF070500F73D7D /* MainStoryboard_iPhone.storyboard in Resources */,
+				502B15BD14AF070500F73D7D /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		502B159E14AF070500F73D7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502B15B314AF070500F73D7D /* main.m in Sources */,
+				502B15B714AF070500F73D7D /* AppDelegate.m in Sources */,
+				502B15C014AF070500F73D7D /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		502B15AF14AF070500F73D7D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502B15B014AF070500F73D7D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502B15B914AF070500F73D7D /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		502B15BB14AF070500F73D7D /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				502B15BC14AF070500F73D7D /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		502B15C114AF070500F73D7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		502B15C214AF070500F73D7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		502B15C414AF070500F73D7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UDPMessenger/UDPMessenger-Prefix.pch";
+				INFOPLIST_FILE = "UDPMessenger/UDPMessenger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		502B15C514AF070500F73D7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UDPMessenger/UDPMessenger-Prefix.pch";
+				INFOPLIST_FILE = "UDPMessenger/UDPMessenger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		502B159C14AF070500F73D7D /* Build configuration list for PBXProject "UDPMessenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502B15C114AF070500F73D7D /* Debug */,
+				502B15C214AF070500F73D7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		502B15C314AF070500F73D7D /* Build configuration list for PBXNativeTarget "UDPMessenger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				502B15C414AF070500F73D7D /* Debug */,
+				502B15C514AF070500F73D7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 502B159914AF070500F73D7D /* Project object */;
+}
