@@ -22,9 +22,6 @@
     IBOutlet UITextField *messageTextField;
     IBOutlet UILabel     *receivedMessageLabel;
     
-    uint16_t             defaultPort;
-    
-    CFHostRef            host;
     NSData               *wifiAddr;
     NSData               *answerFromHost;
 	GCDAsyncUdpSocket    *asyncUdpSocket;
@@ -37,7 +34,6 @@
 @property (retain, nonatomic) UITextField *messageTextField;
 @property (retain, nonatomic) UILabel     *receivedMessageLabel;
 @property (retain, nonatomic) NSData      *wifiAddr;
-@property (nonatomic)         uint16_t    defaultPort;
 @property (nonatomic)         BOOL        ReceiveModeActive;
 
 -(IBAction)sendButtonPushed:(id)sender;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5002811914B0EF2400C01E7F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5002811814B0EF2400C01E7F /* Settings.bundle */; };
 		502B15A714AF070500F73D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15A614AF070500F73D7D /* UIKit.framework */; };
 		502B15A914AF070500F73D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15A814AF070500F73D7D /* Foundation.framework */; };
 		502B15AB14AF070500F73D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15AA14AF070500F73D7D /* CoreGraphics.framework */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5002811814B0EF2400C01E7F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		502B15A214AF070500F73D7D /* UDPMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDPMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		502B15A614AF070500F73D7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		502B15A814AF070500F73D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +60,7 @@
 		502B159714AF070500F73D7D = {
 			isa = PBXGroup;
 			children = (
+				5002811814B0EF2400C01E7F /* Settings.bundle */,
 				502B15AC14AF070500F73D7D /* UDPMessenger */,
 				502B15A514AF070500F73D7D /* Frameworks */,
 				502B15A314AF070500F73D7D /* Products */,
@@ -163,6 +166,7 @@
 				502B15B114AF070500F73D7D /* InfoPlist.strings in Resources */,
 				502B15BA14AF070500F73D7D /* MainStoryboard_iPhone.storyboard in Resources */,
 				502B15BD14AF070500F73D7D /* MainStoryboard_iPad.storyboard in Resources */,
+				5002811914B0EF2400C01E7F /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +300,7 @@
 				502B15C514AF070500F73D7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

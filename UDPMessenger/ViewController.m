@@ -10,7 +10,7 @@
 
 @implementation ViewController
 
-@synthesize localIpLabel, destAddrTextField, portTextField, messageTextField, receivedMessageLabel, wifiAddr, defaultPort, ReceiveModeActive;
+@synthesize localIpLabel, destAddrTextField, portTextField, messageTextField, receivedMessageLabel, wifiAddr, ReceiveModeActive;
 
 
 #pragma mark - delegate methods
@@ -101,14 +101,14 @@ withFilterContext:(id)filterContext
 
 -(void)initController
 {
-    NSLog(@"initController");
-    [self setDefaultPort:9048];
+    NSLog(@"initController:");
+    [destAddrTextField setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"ip_preference"]];
+    [portTextField setText:[[NSUserDefaults standardUserDefaults] stringForKey:@"port_preference"]];
     [self setReceiveModeActive:FALSE];
     [self listInterfaces];                  // just for testing purpose
     [self setWifiAddr:[self wifiAddress]];  // Initializes wifiAddr and sets localIp-Label
     [self initSocket];
     [self connectToHost];
-    //[self connectToHost:@"192.168.1.30" atPort:defaultPort];
 }
 
 - (void)listInterfaces

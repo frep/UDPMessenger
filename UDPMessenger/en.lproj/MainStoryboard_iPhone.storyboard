@@ -84,7 +84,7 @@
                                     <action selector="sendButtonPushed:" destination="2" eventType="touchUpInside" id="MFg-0W-dlb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="192.168.1.30" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="7Ec-Yz-3ib">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="unknown" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="7Ec-Yz-3ib">
                                 <rect key="frame" x="181" y="65" width="119" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -93,7 +93,7 @@
                                     <action selector="hideKeyboard:" destination="2" eventType="editingDidEndOnExit" id="Xfq-aS-WkU"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9048" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Amh-dW-uYH">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="unknown" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Amh-dW-uYH">
                                 <rect key="frame" x="181" y="101" width="119" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

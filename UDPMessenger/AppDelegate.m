@@ -21,6 +21,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults stringForKey:@"ip_preference"] == nil)
+    {
+        [defaults setObject:NSLocalizedString(@"192.168.1.30", nil) forKey:@"ip_preference"];
+        [defaults setObject:NSLocalizedString(@"9048", nil) forKey:@"port_preference"];
+        [defaults synchronize];
+        
+        UIAlertView *infoView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Achtung", nil) message:NSLocalizedString(@"Diese Anwendung wurde das erste Mal gestartet. Bitte überprüfen Sie Ihre Daten in der \"Einstellungen\"-Anwendung.",nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [infoView show];
+        [infoView release];
+    }
     
     return YES;
 }
