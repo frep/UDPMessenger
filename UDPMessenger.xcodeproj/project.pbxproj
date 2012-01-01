@@ -16,6 +16,8 @@
 		502B15BA14AF070500F73D7D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */; };
 		502B15BD14AF070500F73D7D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B15BB14AF070500F73D7D /* MainStoryboard_iPad.storyboard */; };
 		502B15C014AF070500F73D7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15BF14AF070500F73D7D /* ViewController.m */; };
+		502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */; };
+		502B15CD14AF0EFF00F73D7D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +25,19 @@
 		502B15A614AF070500F73D7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		502B15A814AF070500F73D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		502B15AA14AF070500F73D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		502B15AE14AF070500F73D7D /* UDPMessenger-Info.plist */ = {isa = PBXFileReference; path = "UDPMessenger-Info.plist"; sourceTree = "<group>"; };
+		502B15AE14AF070500F73D7D /* UDPMessenger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UDPMessenger-Info.plist"; sourceTree = "<group>"; };
 		502B15B014AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		502B15B214AF070500F73D7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		502B15B414AF070500F73D7D /* UDPMessenger-Prefix.pch */ = {isa = PBXFileReference; path = "UDPMessenger-Prefix.pch"; sourceTree = "<group>"; };
-		502B15B514AF070500F73D7D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		502B15B414AF070500F73D7D /* UDPMessenger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UDPMessenger-Prefix.pch"; sourceTree = "<group>"; };
+		502B15B514AF070500F73D7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		502B15B614AF070500F73D7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		502B15B914AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		502B15BC14AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		502B15BE14AF070500F73D7D /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		502B15BE14AF070500F73D7D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		502B15BF14AF070500F73D7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				502B15CD14AF0EFF00F73D7D /* CFNetwork.framework in Frameworks */,
 				502B15A714AF070500F73D7D /* UIKit.framework in Frameworks */,
 				502B15A914AF070500F73D7D /* Foundation.framework in Frameworks */,
 				502B15AB14AF070500F73D7D /* CoreGraphics.framework in Frameworks */,
@@ -69,6 +75,7 @@
 		502B15A514AF070500F73D7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */,
 				502B15A614AF070500F73D7D /* UIKit.framework */,
 				502B15A814AF070500F73D7D /* Foundation.framework */,
 				502B15AA14AF070500F73D7D /* CoreGraphics.framework */,
@@ -79,6 +86,8 @@
 		502B15AC14AF070500F73D7D /* UDPMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */,
+				502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */,
 				502B15B514AF070500F73D7D /* AppDelegate.h */,
 				502B15B614AF070500F73D7D /* AppDelegate.m */,
 				502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */,
@@ -167,6 +176,7 @@
 				502B15B314AF070500F73D7D /* main.m in Sources */,
 				502B15B714AF070500F73D7D /* AppDelegate.m in Sources */,
 				502B15C014AF070500F73D7D /* ViewController.m in Sources */,
+				502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
