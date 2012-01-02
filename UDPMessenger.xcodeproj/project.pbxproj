@@ -20,13 +20,15 @@
 		502B15C014AF070500F73D7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15BF14AF070500F73D7D /* ViewController.m */; };
 		502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */; };
 		502B15CD14AF0EFF00F73D7D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */; };
+		50C07E0814B2148300B738CB /* arduino1_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0714B2148300B738CB /* arduino1_small.png */; };
+		50C07E0A14B2149100B738CB /* arduino1_Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0914B2149100B738CB /* arduino1_Retina.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5002811814B0EF2400C01E7F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		5002811B14B1133700C01E7F /* UDPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPController.h; sourceTree = "<group>"; };
 		5002811C14B1133700C01E7F /* UDPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPController.m; sourceTree = "<group>"; };
-		502B15A214AF070500F73D7D /* UDPMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDPMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		502B15A214AF070500F73D7D /* Arduino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arduino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		502B15A614AF070500F73D7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		502B15A814AF070500F73D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		502B15AA14AF070500F73D7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,6 +45,8 @@
 		502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		50C07E0714B2148300B738CB /* arduino1_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_small.png; sourceTree = "<group>"; };
+		50C07E0914B2149100B738CB /* arduino1_Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_Retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		502B159714AF070500F73D7D = {
 			isa = PBXGroup;
 			children = (
+				50C07E0914B2149100B738CB /* arduino1_Retina.png */,
+				50C07E0714B2148300B738CB /* arduino1_small.png */,
 				5002811814B0EF2400C01E7F /* Settings.bundle */,
 				502B15AC14AF070500F73D7D /* UDPMessenger */,
 				502B15A514AF070500F73D7D /* Frameworks */,
@@ -73,7 +79,7 @@
 		502B15A314AF070500F73D7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				502B15A214AF070500F73D7D /* UDPMessenger.app */,
+				502B15A214AF070500F73D7D /* Arduino.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +141,7 @@
 			);
 			name = UDPMessenger;
 			productName = UDPMessenger;
-			productReference = 502B15A214AF070500F73D7D /* UDPMessenger.app */;
+			productReference = 502B15A214AF070500F73D7D /* Arduino.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,6 +178,8 @@
 				502B15BA14AF070500F73D7D /* MainStoryboard_iPhone.storyboard in Resources */,
 				502B15BD14AF070500F73D7D /* MainStoryboard_iPad.storyboard in Resources */,
 				5002811914B0EF2400C01E7F /* Settings.bundle in Resources */,
+				50C07E0814B2148300B738CB /* arduino1_small.png in Resources */,
+				50C07E0A14B2149100B738CB /* arduino1_Retina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +279,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UDPMessenger/UDPMessenger-Prefix.pch";
 				INFOPLIST_FILE = "UDPMessenger/UDPMessenger-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = Arduino;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -282,7 +292,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UDPMessenger/UDPMessenger-Prefix.pch";
 				INFOPLIST_FILE = "UDPMessenger/UDPMessenger-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = Arduino;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
