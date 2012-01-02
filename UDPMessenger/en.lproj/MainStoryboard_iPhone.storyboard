@@ -16,61 +16,68 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="UDP Messenger" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="KXh-bM-D5c">
                                 <rect key="frame" x="20" y="20" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="local IP:" lineBreakMode="tailTruncation" minimumFontSize="10" id="W4Z-td-Osn">
-                                <rect key="frame" x="20" y="410" width="119" height="21"/>
+                                <rect key="frame" x="20" y="325" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="destination IP:" lineBreakMode="tailTruncation" minimumFontSize="10" id="U86-Ad-KCt">
-                                <rect key="frame" x="20" y="70" width="119" height="21"/>
+                                <rect key="frame" x="20" y="363" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="port:" lineBreakMode="tailTruncation" minimumFontSize="10" id="dXe-ve-TjH">
-                                <rect key="frame" x="20" y="106" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="message:" lineBreakMode="tailTruncation" minimumFontSize="10" id="rwR-D8-92m">
-                                <rect key="frame" x="20" y="156" width="119" height="21"/>
+                                <rect key="frame" x="20" y="399" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Received message:" lineBreakMode="tailTruncation" minimumFontSize="10" id="ipu-Xy-tQX">
-                                <rect key="frame" x="20" y="297" width="150" height="21"/>
+                                <rect key="frame" x="20" y="229" width="150" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="no message received yet" lineBreakMode="tailTruncation" minimumFontSize="10" id="Mzj-wI-nGK">
-                                <rect key="frame" x="20" y="326" width="280" height="21"/>
+                                <rect key="frame" x="20" y="258" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="unknown" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Nbs-jK-e0D">
-                                <rect key="frame" x="181" y="410" width="119" height="21"/>
+                                <rect key="frame" x="181" y="325" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="unknown" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="O6b-FX-kxw">
+                                <rect key="frame" x="181" y="399" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="unknown" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="2d5-80-3W5">
+                                <rect key="frame" x="181" y="363" width="119" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jv6-e7-Egt">
-                                <rect key="frame" x="20" y="235" width="280" height="37"/>
+                                <rect key="frame" x="20" y="146" width="280" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Send UDP message">
@@ -84,26 +91,8 @@
                                     <action selector="sendButtonPushed:" destination="2" eventType="touchUpInside" id="MFg-0W-dlb"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="unknown" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="7Ec-Yz-3ib">
-                                <rect key="frame" x="181" y="65" width="119" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="hideKeyboard:" destination="2" eventType="editingDidEndOnExit" id="Xfq-aS-WkU"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="unknown" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="Amh-dW-uYH">
-                                <rect key="frame" x="181" y="101" width="119" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="hideKeyboard:" destination="2" eventType="editingDidEndOnExit" id="bwf-B5-QF6"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello Arduino!" borderStyle="roundedRect" minimumFontSize="17" id="D5E-it-Q4Q">
-                                <rect key="frame" x="20" y="185" width="280" height="31"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter message here!" borderStyle="roundedRect" minimumFontSize="17" id="D5E-it-Q4Q">
+                                <rect key="frame" x="20" y="84" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -115,11 +104,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="destAddrTextField" destination="7Ec-Yz-3ib" id="wTQ-8d-HP1"/>
                         <outlet property="localIpLabel" destination="Nbs-jK-e0D" id="qE2-uQ-BAX"/>
                         <outlet property="messageTextField" destination="D5E-it-Q4Q" id="uff-Vq-191"/>
-                        <outlet property="portTextField" destination="Amh-dW-uYH" id="Swj-dU-gzy"/>
+                        <outlet property="portLabel" destination="O6b-FX-kxw" id="RMP-U2-bLZ"/>
                         <outlet property="receivedMessageLabel" destination="Mzj-wI-nGK" id="YhK-yS-R2q"/>
+                        <outlet property="serverIpLabel" destination="2d5-80-3W5" id="X7U-Rn-ZmG"/>
                     </connections>
                 </viewController>
             </objects>
@@ -131,11 +120,11 @@
             <relationships>
                 <relationship kind="action" name="hideKeyboard:"/>
                 <relationship kind="action" name="sendButtonPushed:"/>
-                <relationship kind="outlet" name="destAddrTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="localIpLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="messageTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="portTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="portLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="receivedMessageLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="serverIpLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>

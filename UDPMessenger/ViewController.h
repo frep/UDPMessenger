@@ -7,44 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CFNetwork/CFNetwork.h>
-#import "GCDAsyncUdpSocket.h"
+#import "UDPController.h"
 
-#import <arpa/inet.h>
-#import <net/if.h>
-#import <ifaddrs.h>
-
-@interface ViewController : UIViewController <GCDAsyncUdpSocketDelegate>
+@interface ViewController : UIViewController
 {
     IBOutlet UILabel     *localIpLabel;
-    IBOutlet UITextField *destAddrTextField;
-    IBOutlet UITextField *portTextField;
+    IBOutlet UILabel     *serverIpLabel;
+    IBOutlet UILabel     *portLabel;
     IBOutlet UITextField *messageTextField;
     IBOutlet UILabel     *receivedMessageLabel;
     
-    NSData               *wifiAddr;
-    NSData               *answerFromHost;
-	GCDAsyncUdpSocket    *asyncUdpSocket;
-    BOOL                 ReceiveModeActive;
+    UDPController        *udpController;
 }
 
-@property (retain, nonatomic) UILabel     *localIpLabel;
-@property (retain, nonatomic) UITextField *destAddrTextField;
-@property (retain, nonatomic) UITextField *portTextField;
-@property (retain, nonatomic) UITextField *messageTextField;
-@property (retain, nonatomic) UILabel     *receivedMessageLabel;
-@property (retain, nonatomic) NSData      *wifiAddr;
-@property (nonatomic)         BOOL        ReceiveModeActive;
+@property (retain, nonatomic) UILabel       *localIpLabel;
+@property (retain, nonatomic) UILabel       *serverIpLabel;
+@property (retain, nonatomic) UILabel       *portLabel;
+@property (retain, nonatomic) UITextField   *messageTextField;
+@property (retain, nonatomic) UILabel       *receivedMessageLabel;
+@property (retain, nonatomic) UDPController *udpController;
 
 -(IBAction)sendButtonPushed:(id)sender;
 -(IBAction)hideKeyboard:(id)sender;
 
 -(void)initController;
--(void)listInterfaces;
--(NSData *)wifiAddress;
--(void)initSocket;
--(void)connectToHost;
--(void)sendMessage:(NSString*)message withTimeout:(NSTimeInterval)timeout tag:(long)tag;
--(void)beginReceiving;
+-(void)processReceivedData:(NSNotification *)note;
+
 
 @end
