@@ -11,12 +11,29 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize udpController;
 
 - (void)dealloc
 {
     [_window release];
     [super dealloc];
+    [udpController release];
 }
+
+#pragma mark - own functions
+
+-(BOOL)serverSettingsHaveChanged
+{
+    if([[[NSUserDefaults standardUserDefaults] stringForKey:@"ip_preference"] isEqualToString:[udpController serverIp]] &&
+       ([[[NSUserDefaults standardUserDefaults] stringForKey:@"port_preference"] intValue] == [udpController serverPort]))
+    {
+        return FALSE;
+    }
+
+    return YES;
+}
+
+#pragma mark - delegate functions
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -32,6 +49,10 @@
         [infoView show];
         [infoView release];
     }
+    
+    udpController = [UDPController alloc];
+    [udpController initUDPControllerwithServer:[defaults stringForKey:@"ip_preference"] 
+                                        atPort:[[defaults stringForKey:@"port_preference"] intValue]];
     
     return YES;
 }
@@ -64,6 +85,17 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    
+    if([self serverSettingsHaveChanged])
+    {        
+        // connect to the new server
+        [udpController changeUDPControllerToServer:[[NSUserDefaults standardUserDefaults] stringForKey:@"ip_preference"] 
+                                            atPort:[[[NSUserDefaults standardUserDefaults] stringForKey:@"port_preference"] intValue]];
+        
+        // An observer can add to this notification 
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"serverSettingsHaveChanged" object:nil];
+    }
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

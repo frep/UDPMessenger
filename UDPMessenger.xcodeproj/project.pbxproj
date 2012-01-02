@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5002811914B0EF2400C01E7F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5002811814B0EF2400C01E7F /* Settings.bundle */; };
+		5002811D14B1133700C01E7F /* UDPController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5002811C14B1133700C01E7F /* UDPController.m */; };
 		502B15A714AF070500F73D7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15A614AF070500F73D7D /* UIKit.framework */; };
 		502B15A914AF070500F73D7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15A814AF070500F73D7D /* Foundation.framework */; };
 		502B15AB14AF070500F73D7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15AA14AF070500F73D7D /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		5002811814B0EF2400C01E7F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		5002811B14B1133700C01E7F /* UDPController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UDPController.h; sourceTree = "<group>"; };
+		5002811C14B1133700C01E7F /* UDPController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UDPController.m; sourceTree = "<group>"; };
 		502B15A214AF070500F73D7D /* UDPMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDPMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		502B15A614AF070500F73D7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		502B15A814AF070500F73D7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,8 @@
 				502B15BE14AF070500F73D7D /* ViewController.h */,
 				502B15BF14AF070500F73D7D /* ViewController.m */,
 				502B15AD14AF070500F73D7D /* Supporting Files */,
+				5002811B14B1133700C01E7F /* UDPController.h */,
+				5002811C14B1133700C01E7F /* UDPController.m */,
 			);
 			path = UDPMessenger;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				502B15B714AF070500F73D7D /* AppDelegate.m in Sources */,
 				502B15C014AF070500F73D7D /* ViewController.m in Sources */,
 				502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */,
+				5002811D14B1133700C01E7F /* UDPController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

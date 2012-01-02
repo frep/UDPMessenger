@@ -42,6 +42,7 @@
 
 
 -(void)initUDPControllerwithServer:(NSString*)server atPort:(uint16_t) port;
+-(void)changeUDPControllerToServer:(NSString*)server atPort:(uint16_t) port;
 -(void)sendMessage:(NSString*)message;
 -(void)sendMessage:(NSString*)message withTimeout:(NSTimeInterval)timeout;
 -(void)sendMessage:(NSString*)message withTimeout:(NSTimeInterval)timeout tag:(long)tag;

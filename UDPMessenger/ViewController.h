@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UDPController.h"
+#import "AppDelegate.h"
 
 @interface ViewController : UIViewController
 {
@@ -17,7 +17,8 @@
     IBOutlet UITextField *messageTextField;
     IBOutlet UILabel     *receivedMessageLabel;
     
-    UDPController        *udpController;
+    AppDelegate          *appDelegate;
+    
 }
 
 @property (retain, nonatomic) UILabel       *localIpLabel;
@@ -25,13 +26,17 @@
 @property (retain, nonatomic) UILabel       *portLabel;
 @property (retain, nonatomic) UITextField   *messageTextField;
 @property (retain, nonatomic) UILabel       *receivedMessageLabel;
-@property (retain, nonatomic) UDPController *udpController;
+@property (retain, nonatomic) AppDelegate   *appDelegate;
 
 -(IBAction)sendButtonPushed:(id)sender;
 -(IBAction)hideKeyboard:(id)sender;
 
--(void)initController;
+-(void)initViewController;
+-(void)setViewLabels;
+
+// methods called by observer-notifications 
 -(void)processReceivedData:(NSNotification *)note;
+-(void)serverSettingsHaveChanged:(NSNotification *)note;
 
 
 @end

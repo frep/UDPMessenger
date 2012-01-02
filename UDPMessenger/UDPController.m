@@ -90,6 +90,8 @@ withFilterContext:(id)filterContext
     [self setDefaultTag:1];
     [self setReceiveModeActive:FALSE];
     [self setLocalIp:[self getLocalIp]];
+    [self setServerIp:server];
+    [self setServerPort:port];
     
     // init socket
     asyncUdpSocket = [[GCDAsyncUdpSocket alloc] initWithDelegate:self 
@@ -100,6 +102,28 @@ withFilterContext:(id)filterContext
     {
         NSLog(@"Connection Error: %@",err);
     }
+}
+
+-(void)changeUDPControllerToServer:(NSString*)server atPort:(uint16_t) port
+{
+    if(ReceiveModeActive)
+    {
+        [asyncUdpSocket pauseReceiving];
+        [self setReceiveModeActive:FALSE];
+        
+    }
+    
+    // close socket
+    [asyncUdpSocket close];
+    
+    // connect to new server/port
+    NSError *err = nil;
+    if (![asyncUdpSocket connectToHost:server onPort:port error:&err]) 
+    {
+        NSLog(@"Connection Error: %@",err);
+    }
+    [self setServerIp:server];
+    [self setServerPort:port];
 }
 
 -(void)sendMessage:(NSString*)message

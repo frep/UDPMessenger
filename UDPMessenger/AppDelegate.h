@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UDPController.h"
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    @public
+    UDPController        *udpController;
+}
 
+@property (strong, nonatomic) UIWindow      *window;
+@property (retain, nonatomic) UDPController *udpController;
 
-@property (strong, nonatomic) UIWindow *window;
+-(BOOL)serverSettingsHaveChanged;
 
 @end

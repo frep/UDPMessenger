@@ -10,13 +10,13 @@
 
 @implementation ViewController
 
-@synthesize localIpLabel, serverIpLabel, portLabel, messageTextField, receivedMessageLabel, udpController;
+@synthesize localIpLabel, serverIpLabel, portLabel, messageTextField, receivedMessageLabel, appDelegate;
 
 #pragma mark - own functions
 
 -(IBAction)sendButtonPushed:(id)sender
 {
-    [udpController sendMessage:[messageTextField text]];
+    [[appDelegate udpController] sendMessage:[messageTextField text]];
 }
 
 -(IBAction)hideKeyboard:(id)sender
@@ -24,33 +24,52 @@
     [sender resignFirstResponder];
 }
 
--(void)initController
+-(void)initViewController
 {
-    NSLog(@"initController:");
-    NSString *serverIp = [[NSUserDefaults standardUserDefaults] stringForKey:@"ip_preference"];
-    NSString *port = [[NSUserDefaults standardUserDefaults] stringForKey:@"port_preference"];
+    NSLog(@"initViewController:");
     
-    udpController = [UDPController alloc];
-    [udpController initUDPControllerwithServer:serverIp atPort:[port intValue]];
-    [serverIpLabel setText:serverIp];
-    [portLabel setText:port];
-    [localIpLabel setText:[udpController localIp]];
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [self setViewLabels];
     
     // view controller acts as an observer and is notified, when the UDPController
     // has received a message
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(processReceivedData:) name:@"udpDataReceived" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(processReceivedData:) 
+                                                 name:@"udpDataReceived" 
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(serverSettingsHaveChanged:) 
+                                                 name:@"serverSettingsHaveChanged" 
+                                               object:nil];
     
-    [serverIp release];
-    [port release];
 }
+
+-(void)setViewLabels
+{
+    NSString *portString = [[NSString alloc] initWithFormat:@"%i",[[appDelegate udpController] serverPort]];
+    [serverIpLabel setText:[[appDelegate udpController] serverIp]];
+    [portLabel setText:portString];
+    [localIpLabel setText:[[appDelegate udpController] localIp]];
+    [portString release];
+}
+
+#pragma mark - observer notification methods
 
 -(void)processReceivedData:(NSNotification *)note
 {
-    NSString *message = [[NSString alloc] initWithData:[udpController receiveData] encoding:NSUTF8StringEncoding];
+    NSString *message = [[NSString alloc] initWithData:[[appDelegate udpController] receiveData] encoding:NSUTF8StringEncoding];
     NSLog(@"message: %@",message);
     [receivedMessageLabel setText:message];
     [message release];
 }
+
+-(void)serverSettingsHaveChanged:(NSNotification *)note
+{
+    [self setViewLabels];
+}
+
+#pragma mark - memory management
 
 - (void)didReceiveMemoryWarning
 {
@@ -64,7 +83,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self initController];
+    [self initViewController];
 }
 
 - (void)viewDidUnload
@@ -72,7 +91,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    [udpController release];
 }
 
 - (void)viewWillAppear:(BOOL)animated
