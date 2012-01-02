@@ -66,7 +66,6 @@
     {
         [self serverIsConnected];
     }
-    [[appDelegate udpController] sendMessage:getValues];
 }
 
 #pragma mark - memory management
