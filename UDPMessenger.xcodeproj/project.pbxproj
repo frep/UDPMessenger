@@ -17,9 +17,10 @@
 		502B15B714AF070500F73D7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15B614AF070500F73D7D /* AppDelegate.m */; };
 		502B15BA14AF070500F73D7D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */; };
 		502B15BD14AF070500F73D7D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502B15BB14AF070500F73D7D /* MainStoryboard_iPad.storyboard */; };
-		502B15C014AF070500F73D7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15BF14AF070500F73D7D /* ViewController.m */; };
+		502B15C014AF070500F73D7D /* EchoTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15BF14AF070500F73D7D /* EchoTestViewController.m */; };
 		502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */; };
 		502B15CD14AF0EFF00F73D7D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */; };
+		50A69C2314B2373200B72A25 /* LEDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A69C2114B2373200B72A25 /* LEDTestViewController.m */; };
 		50C07E0814B2148300B738CB /* arduino1_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0714B2148300B738CB /* arduino1_small.png */; };
 		50C07E0A14B2149100B738CB /* arduino1_Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0914B2149100B738CB /* arduino1_Retina.png */; };
 /* End PBXBuildFile section */
@@ -40,11 +41,13 @@
 		502B15B614AF070500F73D7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		502B15B914AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		502B15BC14AF070500F73D7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		502B15BE14AF070500F73D7D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		502B15BF14AF070500F73D7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		502B15BE14AF070500F73D7D /* EchoTestViewController.h */ = {isa = PBXFileReference; path = EchoTestViewController.h; sourceTree = "<group>"; };
+		502B15BF14AF070500F73D7D /* EchoTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EchoTestViewController.m; sourceTree = "<group>"; };
 		502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		50A69C2014B2373200B72A25 /* LEDTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDTestViewController.h; sourceTree = "<group>"; };
+		50A69C2114B2373200B72A25 /* LEDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDTestViewController.m; sourceTree = "<group>"; };
 		50C07E0714B2148300B738CB /* arduino1_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_small.png; sourceTree = "<group>"; };
 		50C07E0914B2149100B738CB /* arduino1_Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_Retina.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,14 +101,16 @@
 		502B15AC14AF070500F73D7D /* UDPMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				50A69C2014B2373200B72A25 /* LEDTestViewController.h */,
+				50A69C2114B2373200B72A25 /* LEDTestViewController.m */,
 				502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */,
 				502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */,
 				502B15B514AF070500F73D7D /* AppDelegate.h */,
 				502B15B614AF070500F73D7D /* AppDelegate.m */,
 				502B15B814AF070500F73D7D /* MainStoryboard_iPhone.storyboard */,
 				502B15BB14AF070500F73D7D /* MainStoryboard_iPad.storyboard */,
-				502B15BE14AF070500F73D7D /* ViewController.h */,
-				502B15BF14AF070500F73D7D /* ViewController.m */,
+				502B15BE14AF070500F73D7D /* EchoTestViewController.h */,
+				502B15BF14AF070500F73D7D /* EchoTestViewController.m */,
 				502B15AD14AF070500F73D7D /* Supporting Files */,
 				5002811B14B1133700C01E7F /* UDPController.h */,
 				5002811C14B1133700C01E7F /* UDPController.m */,
@@ -192,9 +197,10 @@
 			files = (
 				502B15B314AF070500F73D7D /* main.m in Sources */,
 				502B15B714AF070500F73D7D /* AppDelegate.m in Sources */,
-				502B15C014AF070500F73D7D /* ViewController.m in Sources */,
+				502B15C014AF070500F73D7D /* EchoTestViewController.m in Sources */,
 				502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */,
 				5002811D14B1133700C01E7F /* UDPController.m in Sources */,
+				50A69C2314B2373200B72A25 /* LEDTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
