@@ -141,6 +141,9 @@
                             <switch opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="U2H-mO-eEy">
                                 <rect key="frame" x="182" y="146" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="led1SwitchValueChanged:" destination="IME-Zt-XLX" eventType="valueChanged" id="PZi-mb-OgL"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LED1" lineBreakMode="tailTruncation" minimumFontSize="10" id="Bxi-Fg-VLU">
                                 <rect key="frame" x="56" y="149" width="43" height="21"/>
@@ -217,6 +220,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LEDTestViewController.h"/>
             <relationships>
                 <relationship kind="action" name="connectButtonPushed:"/>
+                <relationship kind="action" name="led1SwitchValueChanged:"/>
                 <relationship kind="outlet" name="connectButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="led1Switch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>

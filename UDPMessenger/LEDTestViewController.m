@@ -19,7 +19,7 @@
     NSLog(@"initLEDTestViewController:");
     
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    getValues = [[NSString alloc] initWithFormat:@"1"];
+    getValues = [[NSString alloc] initWithFormat:@"g"];
     serverNotResponding = [[NSString alloc] initWithFormat:@"server is not responding"];
     serverResponding = [[NSString alloc] initWithFormat:@"server is responding"];
     
@@ -39,6 +39,20 @@
 -(IBAction)connectButtonPushed:(id)sender
 {
     [[appDelegate udpController] sendMessage:getValues];
+}
+
+-(IBAction)led1SwitchValueChanged:(id)sender
+{
+    if(led1Switch.on)
+    {
+        // LED shall be set to ON
+        [[appDelegate udpController] sendMessage:@"s_1"];
+    }
+    else
+    {
+        // LED shall be set to OFF
+        [[appDelegate udpController] sendMessage:@"s_0"];
+    }
 }
 
 -(void)serverIsConnected
@@ -64,7 +78,22 @@
 {
     if(!serverIsResponding)
     {
+        NSString *message = [[NSString alloc] initWithData:[[appDelegate udpController] receiveData] 
+                                                  encoding:NSUTF8StringEncoding];
+        if([message isEqualToString:@"LED1_1"])         // LED1 is actual on
+        {
+            [led1Switch setOn:TRUE];
+        }
+        else if([message isEqualToString:@"LED1_0"])    // LED1 is actual off
+        {
+            [led1Switch setOn:FALSE];
+        }
+        else
+        {
+            NSLog(@"message not recognized");
+        }
         [self serverIsConnected];
+        [message release];
     }
 }
 

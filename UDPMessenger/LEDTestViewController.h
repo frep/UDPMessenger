@@ -33,6 +33,7 @@
 @property (nonatomic)         BOOL              serverIsResponding;
 
 -(IBAction)connectButtonPushed:(id)sender;
+-(IBAction)led1SwitchValueChanged:(id)sender;
 
 -(void)initLEDTestViewController;
 -(void)serverIsConnected;
