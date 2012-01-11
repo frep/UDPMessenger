@@ -32,8 +32,7 @@
     
     [self setViewLabels];
     
-    // view controller acts as an observer and is notified, when the UDPController
-    // has received a message
+    // view controller acts as an observer and is notified, when the UDPController has received a message
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(processReceivedData:) 
                                                  name:@"udpDataReceived" 
@@ -91,6 +90,10 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    // remove Observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:@"udpDataReceived" 
+                                                  object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated

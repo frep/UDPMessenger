@@ -25,8 +25,7 @@
     
     [statusLabel setText:serverNotResponding];
     
-    // view controller acts as an observer and is notified, when the UDPController
-    // has received a message
+    // view controller acts as an observer and is notified, when the UDPController has received a message
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(processReceivedData:) 
                                                  name:@"udpDataReceived" 
@@ -122,6 +121,10 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     [self serverCanBeDisconnected];
+    // remove Observer
+    [[NSNotificationCenter defaultCenter] removeObserver:self 
+                                                    name:@"udpDataReceived" 
+                                                  object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
