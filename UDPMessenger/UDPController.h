@@ -44,8 +44,11 @@
 -(void)initUDPControllerwithServer:(NSString*)server atPort:(uint16_t) port;
 -(void)changeUDPControllerToServer:(NSString*)server atPort:(uint16_t) port;
 -(void)sendMessage:(NSString*)message;
+-(void)sendDataMessage:(NSData *)data;
 -(void)sendMessage:(NSString*)message withTimeout:(NSTimeInterval)timeout;
+-(void)sendDataMessage:(NSData *)data withTimeout:(NSTimeInterval)timeout;
 -(void)sendMessage:(NSString*)message withTimeout:(NSTimeInterval)timeout tag:(long)tag;
+-(void)sendDataMessage:(NSData *)data withTimeout:(NSTimeInterval)timeout tag:(long)tag;
 -(void)beginReceiving;
 -(NSString *)getLocalIp;
 

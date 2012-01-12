@@ -153,6 +153,32 @@ withFilterContext:(id)filterContext
                          tag:tag];
 }
 
+-(void)sendDataMessage:(NSData *)data
+{
+    [self sendDataMessage:data 
+              withTimeout:-1 
+                      tag:defaultTag];
+}
+
+-(void)sendDataMessage:(NSData *)data withTimeout:(NSTimeInterval)timeout
+{
+    [self sendDataMessage:data 
+              withTimeout:timeout 
+                      tag:defaultTag];
+}
+
+-(void)sendDataMessage:(NSData *)data withTimeout:(NSTimeInterval)timeout tag:(long)tag
+{
+    if(ReceiveModeActive)
+    {
+        [asyncUdpSocket pauseReceiving];
+        [self setReceiveModeActive:FALSE];
+    }
+    [asyncUdpSocket sendData:data
+                 withTimeout:timeout 
+                         tag:tag];
+}
+
 -(void)beginReceiving
 {
     NSError *err;
