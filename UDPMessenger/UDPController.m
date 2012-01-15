@@ -10,7 +10,7 @@
 
 @implementation UDPController
 
-@synthesize localIp, serverIp, serverPort, asyncUdpSocket, receiveData, ReceiveModeActive, defaultTag;
+@synthesize localIp, serverIp, serverPort, asyncUdpSocket, receivedData, receivedDataSenderAddress, ReceiveModeActive, defaultTag;
 
 #pragma mark - delegate methods
 
@@ -69,7 +69,8 @@
 withFilterContext:(id)filterContext
 {
     NSLog(@"delegate: udpSocket did receive data");
-    [self setReceiveData:data];
+    [self setReceivedData:data];
+    [self setReceivedDataSenderAddress:address];
     // An observer can add to this notification 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"udpDataReceived" object:nil];
 }
@@ -235,6 +236,11 @@ withFilterContext:(id)filterContext
 	}
 	
 	return result;
+}
+
+-(NSString *)getSenderAddress
+{
+    return [GCDAsyncUdpSocket hostFromAddress:receivedDataSenderAddress];
 }
 
 

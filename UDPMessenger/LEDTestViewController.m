@@ -77,7 +77,7 @@
 {
     if(!serverIsResponding)
     {
-        NSString *message = [[NSString alloc] initWithData:[[appDelegate udpController] receiveData] 
+        NSString *message = [[NSString alloc] initWithData:[[appDelegate udpController] receivedData] 
                                                   encoding:NSUTF8StringEncoding];
         if([message isEqualToString:@"LED1_1"])         // LED1 is actual on
         {

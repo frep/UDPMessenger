@@ -22,6 +22,7 @@
 		502B15CD14AF0EFF00F73D7D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */; };
 		50865DDD14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png in Resources */ = {isa = PBXBuildFile; fileRef = 50865DDC14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png */; };
 		50865DE414BE479400E90B47 /* RCoIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50865DE314BE479400E90B47 /* RCoIPViewController.m */; };
+		50865DE714BE4BAC00E90B47 /* RCTx.m in Sources */ = {isa = PBXBuildFile; fileRef = 50865DE614BE4BAC00E90B47 /* RCTx.m */; };
 		50A69C2314B2373200B72A25 /* LEDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A69C2114B2373200B72A25 /* LEDTestViewController.m */; };
 		50C07E0814B2148300B738CB /* arduino1_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0714B2148300B738CB /* arduino1_small.png */; };
 		50C07E0A14B2149100B738CB /* arduino1_Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0914B2149100B738CB /* arduino1_Retina.png */; };
@@ -51,6 +52,9 @@
 		50865DDC14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArduinoUno_R3_Pinouts.png; sourceTree = "<group>"; };
 		50865DE214BE479400E90B47 /* RCoIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCoIPViewController.h; sourceTree = "<group>"; };
 		50865DE314BE479400E90B47 /* RCoIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCoIPViewController.m; sourceTree = "<group>"; };
+		50865DE514BE4BAC00E90B47 /* RCTx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTx.h; sourceTree = "<group>"; };
+		50865DE614BE4BAC00E90B47 /* RCTx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTx.m; sourceTree = "<group>"; };
+		50865DE814BF75C500E90B47 /* RCOIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCOIP.h; sourceTree = "<group>"; };
 		50A69C2014B2373200B72A25 /* LEDTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEDTestViewController.h; sourceTree = "<group>"; };
 		50A69C2114B2373200B72A25 /* LEDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDTestViewController.m; sourceTree = "<group>"; };
 		50C07E0714B2148300B738CB /* arduino1_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_small.png; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		502B15AC14AF070500F73D7D /* UDPMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				50865DE814BF75C500E90B47 /* RCOIP.h */,
 				50A69C2014B2373200B72A25 /* LEDTestViewController.h */,
 				50A69C2114B2373200B72A25 /* LEDTestViewController.m */,
 				502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */,
@@ -122,6 +127,8 @@
 				5002811C14B1133700C01E7F /* UDPController.m */,
 				50865DE214BE479400E90B47 /* RCoIPViewController.h */,
 				50865DE314BE479400E90B47 /* RCoIPViewController.m */,
+				50865DE514BE4BAC00E90B47 /* RCTx.h */,
+				50865DE614BE4BAC00E90B47 /* RCTx.m */,
 			);
 			path = UDPMessenger;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 				5002811D14B1133700C01E7F /* UDPController.m in Sources */,
 				50A69C2314B2373200B72A25 /* LEDTestViewController.m in Sources */,
 				50865DE414BE479400E90B47 /* RCoIPViewController.m in Sources */,
+				50865DE714BE4BAC00E90B47 /* RCTx.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

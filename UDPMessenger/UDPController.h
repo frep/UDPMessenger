@@ -8,6 +8,8 @@
 // The UDPController handles the GCDAsyncUdpSocket. It listens to the UDPSocket until
 // a UPD-Message has to be send. Then, it stops receiving, send the message, and start
 // listening again.
+// If a message is received, the data and the sender address are stored and the
+// notification 'udpDataReceived' is set.
 
 #import <Foundation/Foundation.h>
 // own imports:
@@ -25,6 +27,7 @@
     NSString            *serverIp;
     uint16_t            serverPort;
     NSData              *receivedData;
+    NSData              *receivedDataSenderAddress;
     
     @private
     GCDAsyncUdpSocket   *asyncUdpSocket;
@@ -36,7 +39,8 @@
 @property (retain, nonatomic) NSString          *serverIp;
 @property (nonatomic)         uint16_t          serverPort;
 @property (retain, nonatomic) GCDAsyncUdpSocket *asyncUdpSocket;
-@property (retain, nonatomic) NSData            *receiveData;
+@property (retain, nonatomic) NSData            *receivedData;
+@property (retain, nonatomic) NSData            *receivedDataSenderAddress;
 @property (nonatomic)         BOOL              ReceiveModeActive;
 @property (nonatomic)         long              defaultTag;
 
@@ -51,6 +55,6 @@
 -(void)sendDataMessage:(NSData *)data withTimeout:(NSTimeInterval)timeout tag:(long)tag;
 -(void)beginReceiving;
 -(NSString *)getLocalIp;
-
+-(NSString *)getSenderAddress;
 
 @end

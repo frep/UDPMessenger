@@ -57,7 +57,7 @@
 
 -(void)processReceivedData:(NSNotification *)note
 {
-    NSString *message = [[NSString alloc] initWithData:[[appDelegate udpController] receiveData] encoding:NSUTF8StringEncoding];
+    NSString *message = [[NSString alloc] initWithData:[[appDelegate udpController] receivedData] encoding:NSUTF8StringEncoding];
     NSLog(@"message: %@",message);
     [receivedMessageLabel setText:message];
     [message release];
