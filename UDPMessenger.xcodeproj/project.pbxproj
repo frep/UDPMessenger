@@ -25,6 +25,10 @@
 		50A69C2314B2373200B72A25 /* LEDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A69C2114B2373200B72A25 /* LEDTestViewController.m */; };
 		50C07E0814B2148300B738CB /* arduino1_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0714B2148300B738CB /* arduino1_small.png */; };
 		50C07E0A14B2149100B738CB /* arduino1_Retina.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C07E0914B2149100B738CB /* arduino1_Retina.png */; };
+		50FB575A14C8C831006B6A6C /* arrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FB575614C8C831006B6A6C /* arrowDown.png */; };
+		50FB575C14C8C831006B6A6C /* arrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FB575814C8C831006B6A6C /* arrowRight.png */; };
+		50FB575D14C8C831006B6A6C /* arrowUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FB575914C8C831006B6A6C /* arrowUp.png */; };
+		50FB576014C8C8D0006B6A6C /* arrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 50FB575F14C8C8D0006B6A6C /* arrowLeft.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		50A69C2114B2373200B72A25 /* LEDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEDTestViewController.m; sourceTree = "<group>"; };
 		50C07E0714B2148300B738CB /* arduino1_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_small.png; sourceTree = "<group>"; };
 		50C07E0914B2149100B738CB /* arduino1_Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arduino1_Retina.png; sourceTree = "<group>"; };
+		50FB575614C8C831006B6A6C /* arrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowDown.png; sourceTree = "<group>"; };
+		50FB575814C8C831006B6A6C /* arrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowRight.png; sourceTree = "<group>"; };
+		50FB575914C8C831006B6A6C /* arrowUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowUp.png; sourceTree = "<group>"; };
+		50FB575F14C8C8D0006B6A6C /* arrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowLeft.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,10 @@
 		502B159714AF070500F73D7D = {
 			isa = PBXGroup;
 			children = (
+				50FB575F14C8C8D0006B6A6C /* arrowLeft.png */,
+				50FB575614C8C831006B6A6C /* arrowDown.png */,
+				50FB575814C8C831006B6A6C /* arrowRight.png */,
+				50FB575914C8C831006B6A6C /* arrowUp.png */,
 				50865DDC14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png */,
 				50C07E0914B2149100B738CB /* arduino1_Retina.png */,
 				50C07E0714B2148300B738CB /* arduino1_small.png */,
@@ -197,6 +209,10 @@
 				50C07E0814B2148300B738CB /* arduino1_small.png in Resources */,
 				50C07E0A14B2149100B738CB /* arduino1_Retina.png in Resources */,
 				50865DDD14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png in Resources */,
+				50FB575A14C8C831006B6A6C /* arrowDown.png in Resources */,
+				50FB575C14C8C831006B6A6C /* arrowRight.png in Resources */,
+				50FB575D14C8C831006B6A6C /* arrowUp.png in Resources */,
+				50FB576014C8C8D0006B6A6C /* arrowLeft.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

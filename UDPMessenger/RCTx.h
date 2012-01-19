@@ -15,6 +15,10 @@ typedef struct
 {
     uint8_t version;
     uint8_t led;
+    uint8_t leftDirection;  // 0: backwards, else forwards
+    uint8_t rightDirection; // 0: backwards, else forwards
+    uint8_t leftSpeed;
+    uint8_t rightSpeed;
 } Channels;
 
 // RCTx defines the timers and the data for sending the messages

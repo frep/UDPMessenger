@@ -275,15 +275,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="RCoIP Test" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="M7N-lb-rb4">
-                                <rect key="frame" x="20" y="20" width="280" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gkU-2A-3Tj">
-                                <rect key="frame" x="41" y="85" width="239" height="37"/>
+                                <rect key="frame" x="41" y="20" width="239" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Transmission">
@@ -298,7 +291,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1jx-mf-wYd">
-                                <rect key="frame" x="41" y="147" width="239" height="37"/>
+                                <rect key="frame" x="41" y="80" width="239" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Stop Transmission">
@@ -313,14 +306,14 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="dDr-Kb-LkE">
-                                <rect key="frame" x="201" y="235" width="79" height="27"/>
+                                <rect key="frame" x="201" y="140" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="led1SwitchValueChanged:" destination="nPj-6r-MNL" eventType="valueChanged" id="8Zq-jq-s2C"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LED 1" lineBreakMode="tailTruncation" minimumFontSize="10" id="ILs-Gd-boc">
-                                <rect key="frame" x="41" y="238" width="48" height="21"/>
+                                <rect key="frame" x="41" y="143" width="48" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -340,6 +333,85 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Vgk-OE-iyd">
+                                <rect key="frame" x="124" y="180" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="arrowUp.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonUpPushed:" destination="nPj-6r-MNL" eventType="touchDown" id="oAT-fa-kbO"/>
+                                    <action selector="buttonUpReleased:" destination="nPj-6r-MNL" eventType="touchUpInside" id="fp4-IC-kf4"/>
+                                    <action selector="buttonUpReleased:" destination="nPj-6r-MNL" eventType="touchUpOutside" id="wE2-5p-Ia9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lUy-hG-uoc">
+                                <rect key="frame" x="124" y="253" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="arrowDown.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDownPushed:" destination="nPj-6r-MNL" eventType="touchDown" id="j7h-mj-ZYy"/>
+                                    <action selector="buttonDownReleased:" destination="nPj-6r-MNL" eventType="touchUpInside" id="Ybt-ab-drN"/>
+                                    <action selector="buttonDownReleased:" destination="nPj-6r-MNL" eventType="touchUpOutside" id="x3a-MV-Y1D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1AV-g1-LDo">
+                                <rect key="frame" x="41" y="217" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="arrowLeft.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLeftPushed:" destination="nPj-6r-MNL" eventType="touchDown" id="0VX-60-OjS"/>
+                                    <action selector="buttonLeftReleased:" destination="nPj-6r-MNL" eventType="touchUpInside" id="50f-mA-RI2"/>
+                                    <action selector="buttonLeftReleased:" destination="nPj-6r-MNL" eventType="touchUpOutside" id="OLC-ZT-x25"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5uz-8O-K2R">
+                                <rect key="frame" x="208" y="217" width="72" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="arrowRight.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonRightPushed:" destination="nPj-6r-MNL" eventType="touchDown" id="Hfi-5E-7l9"/>
+                                    <action selector="buttonRightReleased:" destination="nPj-6r-MNL" eventType="touchUpInside" id="Hvf-gj-AEQ"/>
+                                    <action selector="buttonRightReleased:" destination="nPj-6r-MNL" eventType="touchUpOutside" id="M8W-rL-kxK"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="125" minValue="0.0" maxValue="255" id="Jvc-dK-qzJ">
+                                <rect key="frame" x="39" y="340" width="243" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="speed:" lineBreakMode="tailTruncation" minimumFontSize="10" id="gyW-np-a9u">
+                                <rect key="frame" x="41" y="311" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -347,7 +419,12 @@
                     <connections>
                         <outlet property="batteryLabel" destination="ekA-Zs-hOl" id="m3i-ci-bG2"/>
                         <outlet property="batteryLegendLabel" destination="esa-OQ-GIM" id="AZS-b4-pzm"/>
+                        <outlet property="buttonDown" destination="lUy-hG-uoc" id="Usu-OQ-l0v"/>
+                        <outlet property="buttonLeft" destination="1AV-g1-LDo" id="8Bp-dW-D2h"/>
+                        <outlet property="buttonRight" destination="5uz-8O-K2R" id="lLn-Y9-KoT"/>
+                        <outlet property="buttonUp" destination="Vgk-OE-iyd" id="mS4-WC-NoI"/>
                         <outlet property="led1Switch" destination="dDr-Kb-LkE" id="aSA-HN-X8Z"/>
+                        <outlet property="sliderSpeed" destination="Jvc-dK-qzJ" id="oUf-h2-njy"/>
                         <outlet property="startButton" destination="gkU-2A-3Tj" id="fks-ff-LAP"/>
                         <outlet property="stopButton" destination="1jx-mf-wYd" id="eIh-zT-TQb"/>
                     </connections>
@@ -358,6 +435,10 @@
     </scenes>
     <resources>
         <image name="ArduinoUno_R3_Pinouts.png" width="800" height="616"/>
+        <image name="arrowDown.png" width="256" height="256"/>
+        <image name="arrowLeft.png" width="256" height="256"/>
+        <image name="arrowRight.png" width="256" height="256"/>
+        <image name="arrowUp.png" width="256" height="256"/>
     </resources>
     <classes>
         <class className="EchoTestViewController" superclassName="UIViewController">
@@ -385,12 +466,25 @@
         <class className="RCoIPViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RCoIPViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonDownPushed:"/>
+                <relationship kind="action" name="buttonDownReleased:"/>
+                <relationship kind="action" name="buttonLeftPushed:"/>
+                <relationship kind="action" name="buttonLeftReleased:"/>
+                <relationship kind="action" name="buttonRightPushed:"/>
+                <relationship kind="action" name="buttonRightReleased:"/>
+                <relationship kind="action" name="buttonUpPushed:"/>
+                <relationship kind="action" name="buttonUpReleased:"/>
                 <relationship kind="action" name="led1SwitchValueChanged:"/>
                 <relationship kind="action" name="startTransmission"/>
                 <relationship kind="action" name="stopTransmission"/>
                 <relationship kind="outlet" name="batteryLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="batteryLegendLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="buttonDown" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonLeft" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonRight" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonUp" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="led1Switch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="sliderSpeed" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="stopButton" candidateClass="UIButton"/>
             </relationships>

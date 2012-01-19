@@ -10,7 +10,10 @@
 
 @implementation RCoIPViewController
 
-@synthesize rctx, startButton, stopButton, led1Switch, batteryLabel, batteryLegendLabel;
+@synthesize rctx, startButton, stopButton, led1Switch, batteryLabel, batteryLegendLabel, buttonUp, buttonDown, buttonLeft, buttonRight, sliderSpeed;
+
+const uint8_t forwards = 1;
+const uint8_t backwards = 0;
 
 #pragma mark - own functions
 
@@ -41,6 +44,60 @@
         rctx->channels.led = 0;
     }
 }
+
+#pragma mark - movement commands
+
+-(void)moveForward
+{
+    rctx->channels.leftDirection = forwards;
+    rctx->channels.rightDirection = forwards;
+    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    
+    NSLog(@"move forward with speed:%i",(uint8_t)[sliderSpeed value]);
+}
+
+-(void)moveBackward
+{
+    rctx->channels.leftDirection = backwards;
+    rctx->channels.rightDirection = backwards;
+    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    
+    NSLog(@"move backward with speed:%i",(uint8_t)[sliderSpeed value]);
+}
+
+-(void)turnLeft
+{
+    rctx->channels.leftDirection = backwards;
+    rctx->channels.rightDirection = forwards;
+    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    
+    NSLog(@"turn left with speed:%i",(uint8_t)[sliderSpeed value]);
+}
+
+-(void)turnRight
+{
+    rctx->channels.leftDirection = forwards;
+    rctx->channels.rightDirection = backwards;
+    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    
+    NSLog(@"turn right with speed:%i",(uint8_t)[sliderSpeed value]);
+}
+
+-(void)stopMoving
+{
+    rctx->channels.leftDirection = 0;
+    rctx->channels.rightDirection = 0;
+    rctx->channels.leftSpeed = 0;
+    rctx->channels.rightSpeed = 0;
+    
+    NSLog(@"stop moving");
+}
+
+#pragma mark - button actions
 
 -(IBAction)startTransmission
 {
@@ -76,6 +133,46 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self 
                                                     name:@"udpDataReceived" 
                                                   object:nil];
+}
+
+-(IBAction)buttonUpPushed:(id)sender
+{
+    [self moveForward];
+}
+
+-(IBAction)buttonDownPushed:(id)sender
+{
+    [self moveBackward];
+}
+
+-(IBAction)buttonLeftPushed:(id)sender
+{
+    [self turnLeft];
+}
+
+-(IBAction)buttonRightPushed:(id)sender
+{
+    [self turnRight];
+}
+
+-(IBAction)buttonUpReleased:(id)sender
+{
+    [self stopMoving];
+}
+
+-(IBAction)buttonDownReleased:(id)sender
+{
+    [self stopMoving];
+}
+
+-(IBAction)buttonLeftReleased:(id)sender
+{
+    [self stopMoving];
+}
+
+-(IBAction)buttonRightReleased:(id)sender
+{
+    [self stopMoving];
 }
 
 #pragma mark - observer notification methods

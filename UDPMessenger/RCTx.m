@@ -23,7 +23,12 @@
     [self setMaxBatteryVoltage:15.0];
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     channels.version = RC_VERSION;
-    // the other channel-values are set by the ViewController
+    // set default values of the channels
+    channels.led = 0;
+    channels.leftDirection = 0;
+    channels.rightDirection = 0;
+    channels.leftSpeed = 0;
+    channels.rightSpeed = 0;
 }
 
 -(void)startTransmission
