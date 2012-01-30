@@ -10,7 +10,7 @@
 
 @implementation RCoIPViewController
 
-@synthesize rctx, startButton, stopButton, led1Switch, batteryLabel, batteryLegendLabel, buttonUp, buttonDown, buttonLeft, buttonRight, sliderSpeed;
+@synthesize rctx, startButton, stopButton, led1Switch, batteryLabel, batteryLegendLabel, buttonUp, buttonDown, buttonLeft, buttonRight, sliderSpeed, buttonGyroscopeMode, gyroUpdateTimer, motionManager, throttle, direction, motorValue, labelGyro;
 
 const uint8_t forwards = 1;
 const uint8_t backwards = 0;
@@ -29,6 +29,9 @@ const uint8_t backwards = 0;
     // start the RC transmitter
     rctx = [RCTx alloc];
     [rctx initRCTx];
+    
+    // init the gyroscope
+    motionManager = [[CMMotionManager alloc] init];
 }
 
 -(IBAction)led1SwitchValueChanged:(id)sender
@@ -48,53 +51,129 @@ const uint8_t backwards = 0;
 #pragma mark - movement commands
 
 -(void)moveForward
-{
+{    
+    motorValue = [self getThrottleValue];
+    
     rctx->channels.leftDirection = forwards;
     rctx->channels.rightDirection = forwards;
-    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
-    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.leftSpeed = motorValue;
+    rctx->channels.rightSpeed = motorValue;
     
-    NSLog(@"move forward with speed:%i",(uint8_t)[sliderSpeed value]);
+    NSLog(@"move forward with speed:%i",motorValue);
 }
 
 -(void)moveBackward
-{
+{    
+    motorValue = [self getThrottleValue];
+    
     rctx->channels.leftDirection = backwards;
     rctx->channels.rightDirection = backwards;
-    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
-    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.leftSpeed = motorValue;
+    rctx->channels.rightSpeed = motorValue;
     
-    NSLog(@"move backward with speed:%i",(uint8_t)[sliderSpeed value]);
+    NSLog(@"move backward with speed:%i",motorValue);
 }
 
 -(void)turnLeft
-{
+{    
+    motorValue = [self getDirectionValue];
+    
     rctx->channels.leftDirection = backwards;
     rctx->channels.rightDirection = forwards;
-    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
-    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
+    rctx->channels.leftSpeed = motorValue;
+    rctx->channels.rightSpeed = motorValue;
     
-    NSLog(@"turn left with speed:%i",(uint8_t)[sliderSpeed value]);
+    NSLog(@"turn left with speed:%i",motorValue);
 }
 
 -(void)turnRight
-{
+{    
+    motorValue = [self getDirectionValue];
+    
     rctx->channels.leftDirection = forwards;
     rctx->channels.rightDirection = backwards;
-    rctx->channels.leftSpeed = (uint8_t)[sliderSpeed value];
-    rctx->channels.rightSpeed = (uint8_t)[sliderSpeed value];
-    
-    NSLog(@"turn right with speed:%i",(uint8_t)[sliderSpeed value]);
+    rctx->channels.leftSpeed = motorValue;
+    rctx->channels.rightSpeed = motorValue;
+        
+    NSLog(@"turn right with speed:%i",motorValue);
 }
 
 -(void)stopMoving
 {
+    motorValue = 0;
+    
     rctx->channels.leftDirection = 0;
     rctx->channels.rightDirection = 0;
     rctx->channels.leftSpeed = 0;
     rctx->channels.rightSpeed = 0;
     
     NSLog(@"stop moving");
+}
+
+-(uint8_t)getDirectionValue
+{
+    if([motionManager isDeviceMotionActive])
+    {
+        if(direction > 0.0)
+        {
+            if(direction > 1.0)
+            {
+                return 255;
+            }
+            else
+            {
+                return (255 * direction);
+            }
+        }
+        else
+        {
+            if(direction < -1.0)
+            {
+                return 255;
+            }
+            else
+            {
+                return (-255 * direction);
+            }
+        }        
+    }
+    else
+    {
+        return (uint8_t)[sliderSpeed value];      
+    }
+}
+
+-(uint8_t)getThrottleValue
+{
+    if([motionManager isDeviceMotionActive])
+    {
+        if(throttle > 0.0)
+        {
+            if(throttle > 1.0)
+            {
+                return 255;
+            }
+            else
+            {
+                return (255 * throttle);
+            }
+        }
+        else
+        {
+            if(throttle < -1.0)
+            {
+                return 255;
+            }
+            else
+            {
+                return (-255 * throttle);
+            }
+        }
+    }
+    else
+    {
+        return (uint8_t)[sliderSpeed value];      
+    }
 }
 
 #pragma mark - button actions
@@ -173,6 +252,114 @@ const uint8_t backwards = 0;
 -(IBAction)buttonRightReleased:(id)sender
 {
     [self stopMoving];
+}
+
+-(IBAction)toggleGyroUpdates:(id)sender
+{
+    if([motionManager isGyroAvailable])
+    {
+        if([motionManager isDeviceMotionActive])
+        {
+            // stop gyroscope
+            [motionManager stopDeviceMotionUpdates];
+            // stop gyroUpdateTimer
+            [gyroUpdateTimer invalidate];
+            // enable arrow-buttons and slider
+            [buttonUp    setEnabled:TRUE];
+            [buttonDown  setEnabled:TRUE];
+            [buttonLeft  setEnabled:TRUE];
+            [buttonRight setEnabled:TRUE];
+            [sliderSpeed setEnabled:TRUE];
+        }
+        else
+        {
+            // start gyroscope
+            [motionManager startDeviceMotionUpdates];
+            // start gyroUpdateTimer
+            gyroUpdateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/30.0 
+                                                               target:self 
+                                                             selector:@selector(doGyroUpdate) 
+                                                             userInfo:nil 
+                                                              repeats:YES];
+            // disable arrow-buttons and slider
+            [buttonUp    setEnabled:FALSE];
+            [buttonDown  setEnabled:FALSE];
+            [buttonLeft  setEnabled:FALSE];
+            [buttonRight setEnabled:FALSE];
+            [sliderSpeed setEnabled:FALSE];
+            
+            throttle = 0;
+            direction = 0;
+        }
+    }
+    else
+    {
+        NSLog(@"Gyroscope not Available!");
+    }
+
+}
+
+-(void)doGyroUpdate
+{
+    throttle = motionManager.deviceMotion.attitude.roll;
+    direction = motionManager.deviceMotion.attitude.pitch;
+    
+    if(fabs(throttle)>fabs(direction))
+    {
+        // drive forwards or backwards
+        if(throttle > 0)
+        {
+            if(throttle < 0.15)      // less than 15%
+            {
+                [self stopMoving];
+            }
+            else
+            {
+                [self moveForward];
+            }
+        }
+        else
+        {
+            if(throttle > -0.15)     // less than 15%
+            {
+                [self stopMoving];
+            }
+            else
+            {
+                [self moveBackward];
+            }
+        }
+    }
+    else
+    {
+        // turn left or right
+        if(direction > 0)
+        {
+            if(direction < 0.15)     // less than 15%
+            {
+                [self stopMoving];
+            }
+            else
+            {
+                [self turnRight];            
+            }
+        }
+        else
+        {
+            if(direction > -0.15)    // less than 15%
+            {
+                [self stopMoving];
+            }
+            else
+            {
+                [self turnLeft];           
+            }
+        }
+    }
+    
+    NSString *motorValueString = [[NSString alloc] initWithFormat:@"%i",motorValue];
+    [labelGyro setText:motorValueString];
+    [motorValueString release];
 }
 
 #pragma mark - observer notification methods

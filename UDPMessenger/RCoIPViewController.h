@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreMotion/CoreMotion.h>
 #import "AppDelegate.h"
 #import "RCTx.h"
 
@@ -25,6 +26,15 @@
     IBOutlet UIButton *buttonLeft;
     IBOutlet UIButton *buttonRight;
     IBOutlet UISlider *sliderSpeed;
+    
+    IBOutlet UIButton *buttonGyroscopeMode;
+    
+    CMMotionManager   *motionManager;
+    NSTimer           *gyroUpdateTimer;
+    float             throttle;
+    float             direction;
+    uint8_t           motorValue;
+    IBOutlet UILabel  *labelGyro;
 }
 
 @property (retain, nonatomic) RCTx *rctx;
@@ -38,6 +48,13 @@
 @property (retain, nonatomic) IBOutlet UIButton *buttonLeft;
 @property (retain, nonatomic) IBOutlet UIButton *buttonRight;
 @property (retain, nonatomic) IBOutlet UISlider *sliderSpeed;
+@property (retain, nonatomic) IBOutlet UIButton *buttonGyroscopeMode;
+@property (retain, nonatomic) NSTimer           *gyroUpdateTimer;
+@property (retain, nonatomic) CMMotionManager   *motionManager;
+@property (nonatomic)         float             throttle;
+@property (nonatomic)         float             direction;
+@property (nonatomic)         uint8_t           motorValue;
+@property (retain, nonatomic) IBOutlet UILabel  *labelGyro;
 
 -(void)initRCoIPViewController;
 
@@ -62,5 +79,11 @@
 -(void)stopMoving;
 
 -(void)processReceivedData:(NSNotification *)note;
+
+-(IBAction)toggleGyroUpdates:(id)sender;
+-(void)doGyroUpdate;
+
+-(uint8_t)getThrottleValue;
+-(uint8_t)getDirectionValue;
 
 @end
