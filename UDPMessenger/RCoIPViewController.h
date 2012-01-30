@@ -15,8 +15,7 @@
 {
     RCTx *rctx;
     
-    IBOutlet UIButton *startButton;
-    IBOutlet UIButton *stopButton;
+    IBOutlet UIButton *buttonTransmission;
     IBOutlet UISwitch *led1Switch;
     IBOutlet UILabel  *batteryLabel;
     IBOutlet UILabel  *batteryLegendLabel;
@@ -34,12 +33,14 @@
     float             throttle;
     float             direction;
     uint8_t           motorValue;
+    float             thresholdMove;
     IBOutlet UILabel  *labelGyro;
+    
+    BOOL              isTransmissionOn;
 }
 
 @property (retain, nonatomic) RCTx *rctx;
-@property (retain, nonatomic) IBOutlet UIButton *startButton;
-@property (retain, nonatomic) IBOutlet UIButton *stopButton;
+@property (retain, nonatomic) IBOutlet UIButton *buttonTransmission;
 @property (retain, nonatomic) IBOutlet UISwitch *led1Switch;
 @property (retain, nonatomic) IBOutlet UILabel  *batteryLabel;
 @property (retain, nonatomic) IBOutlet UILabel  *batteryLegendLabel;
@@ -54,12 +55,15 @@
 @property (nonatomic)         float             throttle;
 @property (nonatomic)         float             direction;
 @property (nonatomic)         uint8_t           motorValue;
+@property (nonatomic)         float             thresholdMove;
 @property (retain, nonatomic) IBOutlet UILabel  *labelGyro;
+@property (nonatomic)         BOOL              isTransmissionOn;
 
 -(void)initRCoIPViewController;
 
--(IBAction)startTransmission;
--(IBAction)stopTransmission;
+-(IBAction)toggleTransmission:(id)sender;
+-(void)startTransmission;
+-(void)stopTransmission;
 
 -(IBAction)led1SwitchValueChanged:(id)sender;
 

@@ -10,7 +10,7 @@
 
 @implementation RCoIPViewController
 
-@synthesize rctx, startButton, stopButton, led1Switch, batteryLabel, batteryLegendLabel, buttonUp, buttonDown, buttonLeft, buttonRight, sliderSpeed, buttonGyroscopeMode, gyroUpdateTimer, motionManager, throttle, direction, motorValue, labelGyro;
+@synthesize rctx, buttonTransmission, led1Switch, batteryLabel, batteryLegendLabel, buttonUp, buttonDown, buttonLeft, buttonRight, sliderSpeed, buttonGyroscopeMode, gyroUpdateTimer, motionManager, throttle, direction, motorValue, thresholdMove, labelGyro, isTransmissionOn;
 
 const uint8_t forwards = 1;
 const uint8_t backwards = 0;
@@ -21,10 +21,13 @@ const uint8_t backwards = 0;
 {
     // Init buttons, switches and labels
     [led1Switch setEnabled:FALSE];
-    [startButton setEnabled:TRUE];
-    [stopButton setEnabled:FALSE];
+    [buttonTransmission setEnabled:TRUE];
+    [buttonGyroscopeMode setEnabled:TRUE];
     [batteryLegendLabel setText:@""];
     [batteryLabel setText:@""];
+    [self setIsTransmissionOn:FALSE];
+    [buttonTransmission setTitle:@"Start transmission" 
+                        forState:UIControlStateNormal];
     
     // start the RC transmitter
     rctx = [RCTx alloc];
@@ -32,6 +35,10 @@ const uint8_t backwards = 0;
     
     // init the gyroscope
     motionManager = [[CMMotionManager alloc] init];
+    [self setThresholdMove:0.15];   // more than 15% percent needed to move
+    [buttonGyroscopeMode setTitle:@"deviceMotion off" 
+                         forState:UIControlStateNormal];
+
 }
 
 -(IBAction)led1SwitchValueChanged:(id)sender
@@ -178,12 +185,28 @@ const uint8_t backwards = 0;
 
 #pragma mark - button actions
 
--(IBAction)startTransmission
+-(IBAction)toggleTransmission:(id)sender
+{
+    if(isTransmissionOn)
+    {
+        // turn transmission off
+        [self setIsTransmissionOn:FALSE];
+        [self stopTransmission];
+        [buttonTransmission setTitle:@"Start transmission" forState:UIControlStateNormal];
+    }
+    else
+    {
+        // turn transmission on
+        [self setIsTransmissionOn:TRUE];
+        [self startTransmission];
+        [buttonTransmission setTitle:@"Stop transmission" forState:UIControlStateNormal];
+    }
+}
+
+-(void)startTransmission
 {
     // Set states of buttons and switches
     [led1Switch setEnabled:TRUE];
-    [startButton setEnabled:FALSE];
-    [stopButton setEnabled:TRUE];
     [batteryLegendLabel setText:@"Battery voltage:"];
     
     // start RC transmitter
@@ -196,12 +219,10 @@ const uint8_t backwards = 0;
                                                object:nil];
 }
 
--(IBAction)stopTransmission
+-(void)stopTransmission
 {
     // Set states of buttons and switches
     [led1Switch setEnabled:FALSE];
-    [startButton setEnabled:TRUE];
-    [stopButton setEnabled:FALSE];
     [batteryLegendLabel setText:@""];
     [batteryLabel setText:@""];
     
@@ -270,6 +291,8 @@ const uint8_t backwards = 0;
             [buttonLeft  setEnabled:TRUE];
             [buttonRight setEnabled:TRUE];
             [sliderSpeed setEnabled:TRUE];
+            // set button title
+            [buttonGyroscopeMode setTitle:@"deviceMotion off" forState:UIControlStateNormal];
         }
         else
         {
@@ -287,6 +310,8 @@ const uint8_t backwards = 0;
             [buttonLeft  setEnabled:FALSE];
             [buttonRight setEnabled:FALSE];
             [sliderSpeed setEnabled:FALSE];
+            // set button title
+            [buttonGyroscopeMode setTitle:@"deviceMotion on" forState:UIControlStateNormal];
             
             throttle = 0;
             direction = 0;
@@ -309,7 +334,7 @@ const uint8_t backwards = 0;
         // drive forwards or backwards
         if(throttle > 0)
         {
-            if(throttle < 0.15)      // less than 15%
+            if(throttle < [self thresholdMove])         // less than 15%
             {
                 [self stopMoving];
             }
@@ -320,7 +345,7 @@ const uint8_t backwards = 0;
         }
         else
         {
-            if(throttle > -0.15)     // less than 15%
+            if(throttle > (-1 * [self thresholdMove]))  // less than 15%
             {
                 [self stopMoving];
             }
@@ -335,7 +360,7 @@ const uint8_t backwards = 0;
         // turn left or right
         if(direction > 0)
         {
-            if(direction < 0.15)     // less than 15%
+            if(direction < [self thresholdMove])        // less than 15%
             {
                 [self stopMoving];
             }
@@ -346,7 +371,7 @@ const uint8_t backwards = 0;
         }
         else
         {
-            if(direction > -0.15)    // less than 15%
+            if(direction > (-1 * [self thresholdMove])) // less than 15%
             {
                 [self stopMoving];
             }
