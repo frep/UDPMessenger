@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11C74" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="f2c-vT-WB6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="f2c-vT-WB6">
     <dependencies>
         <development defaultVersion="4200" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
@@ -143,7 +143,7 @@
                                 <rect key="frame" x="96" y="302" width="129" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="LED Test">
+                                <state key="normal" title="Terminal">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -198,51 +198,41 @@
         <scene sceneID="t0I-ks-hpL">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dA8-e8-xVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="IME-Zt-XLX" customClass="LEDTestViewController" sceneMemberID="viewController">
+                <viewController id="IME-Zt-XLX" customClass="TerminalViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6zG-xS-bSt">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LED Test" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="2Zh-Kv-i59">
-                                <rect key="frame" x="20" y="20" width="280" height="32"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Terminal" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="2Zh-Kv-i59">
+                                <rect key="frame" x="20" y="9" width="280" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.1088848181" green="1" blue="0.36501720189999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="U2H-mO-eEy">
-                                <rect key="frame" x="182" y="146" width="79" height="27"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter message to send" borderStyle="roundedRect" minimumFontSize="17" id="QEP-Za-XnP">
+                                <rect key="frame" x="20" y="79" width="280" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="led1SwitchValueChanged:" destination="IME-Zt-XLX" eventType="valueChanged" id="PZi-mb-OgL"/>
+                                    <action selector="hideKeyboard:" destination="IME-Zt-XLX" eventType="editingDidEndOnExit" id="6ND-ZI-3nl"/>
                                 </connections>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="LED1" lineBreakMode="tailTruncation" minimumFontSize="10" id="Bxi-Fg-VLU">
-                                <rect key="frame" x="56" y="149" width="43" height="21"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" editable="NO" id="X6x-fn-lTg">
+                                <rect key="frame" x="0.0" y="118" width="320" height="298"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Status:" lineBreakMode="tailTruncation" minimumFontSize="10" id="gNB-n5-kPF">
-                                <rect key="frame" x="20" y="350" width="70" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" id="F7p-mw-irf">
-                                <rect key="frame" x="112" y="350" width="188" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AFd-4j-hFl">
-                                <rect key="frame" x="20" y="245" width="280" height="37"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.10888481814229189" green="1" blue="0.36501720185693853" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7DB-c6-Typ">
+                                <rect key="frame" x="124" y="43" width="72" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Connect to Arduino">
+                                <state key="normal" title="clear">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -250,18 +240,50 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="connectButtonPushed:" destination="IME-Zt-XLX" eventType="touchUpInside" id="3J3-jc-74J"/>
+                                    <action selector="buttonClearPushed:" destination="IME-Zt-XLX" eventType="touchUpInside" id="4Jb-QX-ySB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eUk-0v-GM6">
+                                <rect key="frame" x="20" y="43" width="72" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="start">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonStartStopPushed:" destination="IME-Zt-XLX" eventType="touchUpInside" id="0Cp-XY-CxD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GC9-v0-vTf">
+                                <rect key="frame" x="228" y="43" width="72" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="send">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonSendPushed:" destination="IME-Zt-XLX" eventType="touchUpInside" id="LgF-oN-PeS"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" id="mxO-Xa-zq0"/>
                     <connections>
-                        <outlet property="connectButton" destination="AFd-4j-hFl" id="0rZ-fZ-kR5"/>
-                        <outlet property="led1Switch" destination="U2H-mO-eEy" id="DGD-Jc-0Oc"/>
-                        <outlet property="statusLabel" destination="F7p-mw-irf" id="3nK-K1-1TY"/>
+                        <outlet property="buttonClear" destination="7DB-c6-Typ" id="IIm-Hi-tso"/>
+                        <outlet property="buttonSend" destination="GC9-v0-vTf" id="Yav-Jg-vLi"/>
+                        <outlet property="buttonStartStop" destination="eUk-0v-GM6" id="GNo-DQ-YLf"/>
+                        <outlet property="textFieldMessage" destination="QEP-Za-XnP" id="PsT-UP-waW"/>
+                        <outlet property="textViewTerminal" destination="X6x-fn-lTg" id="QyJ-mM-qVD"/>
                     </connections>
                 </viewController>
             </objects>
@@ -461,16 +483,6 @@
                 <relationship kind="outlet" name="serverIpLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="LEDTestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LEDTestViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="connectButtonPushed:"/>
-                <relationship kind="action" name="led1SwitchValueChanged:"/>
-                <relationship kind="outlet" name="connectButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="led1Switch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="statusLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
         <class className="RCoIPViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RCoIPViewController.h"/>
             <relationships>
@@ -496,6 +508,20 @@
                 <relationship kind="outlet" name="labelGyro" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="led1Switch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="sliderSpeed" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="TerminalViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TerminalViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonClearPushed:"/>
+                <relationship kind="action" name="buttonSendPushed:"/>
+                <relationship kind="action" name="buttonStartStopPushed:"/>
+                <relationship kind="action" name="hideKeyboard:"/>
+                <relationship kind="outlet" name="buttonClear" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonSend" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="buttonStartStop" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="textFieldMessage" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="textViewTerminal" candidateClass="UITextView"/>
             </relationships>
         </class>
     </classes>

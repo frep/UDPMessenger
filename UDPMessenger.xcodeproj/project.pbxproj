@@ -19,6 +19,7 @@
 		502B15C014AF070500F73D7D /* EchoTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15BF14AF070500F73D7D /* EchoTestViewController.m */; };
 		502B15C814AF073000F73D7D /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */; };
 		502B15CD14AF0EFF00F73D7D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */; };
+		502CCB4514F3A65300B363D4 /* TerminalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 502CCB4414F3A65300B363D4 /* TerminalViewController.m */; };
 		5055899E14D5F5ED003F3A72 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5055899D14D5F5ED003F3A72 /* CoreMotion.framework */; };
 		50865DDD14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png in Resources */ = {isa = PBXBuildFile; fileRef = 50865DDC14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png */; };
 		50865DE414BE479400E90B47 /* RCoIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50865DE314BE479400E90B47 /* RCoIPViewController.m */; };
@@ -52,6 +53,8 @@
 		502B15C614AF073000F73D7D /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		502B15C714AF073000F73D7D /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		502B15CC14AF0EFF00F73D7D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		502CCB4314F3A65300B363D4 /* TerminalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerminalViewController.h; sourceTree = "<group>"; };
+		502CCB4414F3A65300B363D4 /* TerminalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerminalViewController.m; sourceTree = "<group>"; };
 		5055899D14D5F5ED003F3A72 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		50865DDC14BE43E700E90B47 /* ArduinoUno_R3_Pinouts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArduinoUno_R3_Pinouts.png; sourceTree = "<group>"; };
 		50865DE214BE479400E90B47 /* RCoIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCoIPViewController.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 				50865DE314BE479400E90B47 /* RCoIPViewController.m */,
 				50865DE514BE4BAC00E90B47 /* RCTx.h */,
 				50865DE614BE4BAC00E90B47 /* RCTx.m */,
+				502CCB4314F3A65300B363D4 /* TerminalViewController.h */,
+				502CCB4414F3A65300B363D4 /* TerminalViewController.m */,
 			);
 			path = UDPMessenger;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				50A69C2314B2373200B72A25 /* LEDTestViewController.m in Sources */,
 				50865DE414BE479400E90B47 /* RCoIPViewController.m in Sources */,
 				50865DE714BE4BAC00E90B47 /* RCTx.m in Sources */,
+				502CCB4514F3A65300B363D4 /* TerminalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
